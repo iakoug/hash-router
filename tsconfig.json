@@ -1,0 +1,43 @@
+{
+  "rules": {
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "member-access": [true, "no-public"],
+    "ordered-imports": false
+  },
+  "no-console": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "target": "es5",
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "strictNullChecks": false,
+    "outDir": "es/",
+    "lib": ["es6", "es7", "esnext", "dom"],
+    "baseUrl": "src",
+    "paths": {}
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "deploy",
+    "build",
+    "scripts",
+    "test",
+    "jest.config.js",
+    "babel.config.js",
+    "rollup.config.js"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "@justwink/crisp",
+  "version": "1.0.0",
+  "description": "The hash router.",
+  "main": "dist/crisp.cjs.js",
+  "module": "dist/crisp.esm.js",
+  "browser": "dist/crisp.umd.js",
+  "scripts": {
+    "build": "rm -rf dist && npx rollup -c",
+    "deploy": "npm run build && npm publish",
+    "dev": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justwink/hash-router.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "rollup": "^1.24.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,ts,jsx,js,json}": [
+      "prettier --config ./.prettierrc --write",
+      "eslint  -c ./.eslintrc.js --fix",
+      "git add"
+    ]
+  },
+  "files": [
+    "dist"
+  ]
+}
